@@ -21,5 +21,5 @@ class Triangle(Figure):
     @property
     def area(self):
         """Area calculation"""
-        height = self.get_perimeter() / 2
+        height = self.perimeter / 2
         return math.sqrt(height * (height - self.a) * (height - self.b) * (height - self.c))
