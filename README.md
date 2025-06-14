@@ -11,6 +11,13 @@ Each class represents a geometric figure and supports:
   - `get_area()` → implemented as a `@property` named `area`
   - `get_perimeter()` → implemented as a `@property` named `perimeter`
   - `add_area(figure)` → returns the sum of the areas of two figures
+- test/
+This test suite verifies the correctness of object-oriented geometric classes:
+- `Triangle`
+- `Rectangle`
+- `Square`
+- `Circle`
+Implemented tests validate area and perimeter calculations, as well as proper behavior of the `add_area()` method.
 
 - More scripts coming soon as learning progresses...
 
