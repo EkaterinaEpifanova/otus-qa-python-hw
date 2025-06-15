@@ -11,7 +11,11 @@ Each class represents a geometric figure and supports:
   - `get_area()` → implemented as a `@property` named `area`
   - `get_perimeter()` → implemented as a `@property` named `perimeter`
   - `add_area(figure)` → returns the sum of the areas of two figures
-
+- test-data/ 
+  - Reads a list of books from a CSV file 
+  - Reads a list of users from a JSON file
+  - Distributes the books as evenly as possible among the users 
+  - Saves the result to result.json in proper JSON format
 - More scripts coming soon as learning progresses...
 
 ## 🛠 Skills Covered
