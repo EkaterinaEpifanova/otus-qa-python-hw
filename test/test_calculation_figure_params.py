@@ -3,17 +3,25 @@ import pytest
 from src.circle import Circle
 from src.square import Square
 
-def test_add_area_square_and_circle():
+@pytest.mark.parametrize(
+    "figure_1, figure_2",
+    [
+        (Square(4), Circle(3))
+    ]
+)
+def test_add_area_square_and_circle(figure_1, figure_2):
     """Calculation of area of square and circle"""
-    square = Square(4)
-    circle = Circle(3)
-    expected_total = round(square.area + circle.area, 2)
-    result = round(square.add_area(circle), 2)
+    expected_total = figure_1.area + figure_2.area
+    result = figure_1.add_area(figure_2)
     assert result == expected_total, f"Expected {expected_total}, got {result}"
 
-def test_add_area_with_invalid_type():
+@pytest.mark.parametrize(
+    "figure_1, figure_2",
+    [
+        (Square(5), "not_a_shape")
+    ]
+)
+def test_add_area_with_invalid_type(figure_1, figure_2):
     """Calculation of area of square and invalid shape"""
-    square = Square(5)
-    invalid_object = "not_a_shape"
     with pytest.raises(ValueError):
-        square.add_area(invalid_object)
+        figure_1.add_area(figure_2)

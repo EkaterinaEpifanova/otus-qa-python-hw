@@ -2,11 +2,15 @@
 import pytest
 from src.square import Square
 
-def test_create_square():
+@pytest.mark.parametrize(
+    "side, expected_area, expected_perimeter",
+    [
+        (10, 100, 40)
+    ]
+)
+def test_create_square(side, expected_area, expected_perimeter):
     """Check of creation square"""
-    square = Square(10)
-    expected_area =  100
-    expected_perimeter = 40
+    square = Square(side)
     assert square.area == expected_area, f"Expected area {expected_area}, got {square.area}"
     assert square.perimeter == expected_perimeter, \
         f"Expected perimeter {expected_perimeter}, got {square.perimeter}"

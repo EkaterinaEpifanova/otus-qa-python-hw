@@ -2,13 +2,17 @@
 import pytest
 from src.circle import Circle
 
-def test_create_circle():
+@pytest.mark.parametrize(
+    "radius, expected_area, expected_perimeter",
+    [
+        (10, 314.16, 62.83)
+    ]
+)
+def test_create_circle(radius, expected_area, expected_perimeter):
     """Check of creation circle"""
-    circle = Circle(10)
-    expected_area = 314.16
-    expected_perimeter = 62.83
-    actual_area = round(circle.area, 2)
-    actual_perimeter = round(circle.perimeter, 2)
+    circle = Circle(radius)
+    actual_area = circle.area
+    actual_perimeter = circle.perimeter
     assert actual_area == expected_area, f"Expected area {expected_area}, got {actual_area}"
     assert actual_perimeter == expected_perimeter, \
         f"Expected perimeter {expected_perimeter}, got {actual_perimeter}"

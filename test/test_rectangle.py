@@ -2,11 +2,15 @@
 import pytest
 from src.rectangle import Rectangle
 
-def test_create_rectangle():
+@pytest.mark.parametrize(
+    "width, height, expected_area, expected_perimeter",
+    [
+        (10, 50, 500, 120)
+    ]
+)
+def test_create_rectangle(width, height, expected_area, expected_perimeter):
     """Check of creation rectangle"""
-    rectangle = Rectangle(10, 50)
-    expected_area =  500
-    expected_perimeter = 120
+    rectangle = Rectangle(width, height)
     assert rectangle.area == expected_area, f"Expected area {expected_area}, got {rectangle.area}"
     assert rectangle.perimeter == expected_perimeter, \
         f"Expected perimeter {expected_perimeter}, got {rectangle.perimeter}"

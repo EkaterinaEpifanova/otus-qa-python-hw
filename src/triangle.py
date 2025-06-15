@@ -16,10 +16,10 @@ class Triangle(Figure):
     @property
     def perimeter(self):
         """Perimetr calculation"""
-        return self.a + self.b + self.c
+        return round(self.a + self.b + self.c, 2)
 
     @property
     def area(self):
         """Area calculation"""
         height = self.perimeter / 2
-        return math.sqrt(height * (height - self.a) * (height - self.b) * (height - self.c))
+        return round(math.sqrt(height * (height - self.a) * (height - self.b) * (height - self.c)), 2)
