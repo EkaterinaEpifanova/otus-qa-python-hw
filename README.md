@@ -19,6 +19,11 @@ This test suite verifies the correctness of object-oriented geometric classes:
 - `Circle`
 Implemented tests validate area and perimeter calculations, as well as proper behavior of the `add_area()` method.
 
+- test-data/ 
+  - Reads a list of books from a CSV file 
+  - Reads a list of users from a JSON file
+  - Distributes the books as evenly as possible among the users 
+  - Saves the result to result.json in proper JSON format
 - More scripts coming soon as learning progresses...
 
 ## 🛠 Skills Covered
